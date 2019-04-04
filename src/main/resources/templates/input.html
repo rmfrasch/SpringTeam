@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert New Player</title>
+</head>
+<body>
+ <form th:object="${newPlayer}" th:action="@{/inputPlayer}" method='POST'>
+ 
+ First Name <input name="firstName" size="20"> <br />
+ Last Name <input name="lastName" size="10"><br />
+ Win Ratio <input name="winRatio" size="20"><br />
+        
+ <input name="submit" type="submit" value="submit" />
+         
+</form>
+<a href="viewAll">View all Players</a>
+</body>
+</html>

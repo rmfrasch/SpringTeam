@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Players</title>
+</head>
+<body>
+	<form>
+		<table>
+			<tr th:each="currentPlayer : ${players}">
+				<td th:text="${currentPlayer.id}" />
+				<td th:text="${currentPlayer.firstName}" />
+				<td th:text="${currentPlayer.lastName}" />
+				<td th:text="${currentPlayer.winRatio}" />
+				<td><a th:href="@{/edit/{id}(id=${currentPlayer.id})}">Edit</a></td>
+				<td><a th:href="@{/delete/{id}(id=${currentPlayer.id})}">Delete</a></td>
+			</tr>
+		</table>
+	</form>
+	<a href="../inputPlayer">Add a new player</a>
+</body>
+</html>
